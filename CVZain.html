@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lebenslauf - Zain Alabdin Alfil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Optimized ATS-Friendly Design */
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #3b82f6;
+            --accent: #ef4444;
+            --light: #f3f4f6;
+            --dark: #111827;
+            --text: #374151;
+            --neutral: #6b7280;
+            --card: #ffffff;
+            --timeline: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            max-width: 210mm;
+            margin: 20px auto;
+            padding: 0;
+            background: #f9fafb;
+            letter-spacing: 0.01em;
+        }
+
+        .container {
+            background: var(--card);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .header {
+            position: relative;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent);
+        }
+
+        .photo-container {
+            position: relative;
+            width: 140px;
+            height: 140px;
+        }
+
+        .photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .photo:hover {
+            transform: scale(1.05);
+        }
+
+        .contact-info {
+            padding-top: 5px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 36px;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+            font-weight: 700;
+        }
+
+        .position {
+            color: var(--light);
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            border-left: 3px solid var(--accent);
+            padding-left: 10px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+        }
+
+        .icon {
+            color: white;
+            width: 20px;
+            text-align: center;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 22px;
+            margin: 0 0 20px;
+            position: relative;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        h3 {
+            color: var(--secondary);
+            font-size: 18px;
+            margin: 15px 0 10px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+            break-inside: avoid;
+        }
+
+        .entry {
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid var(--timeline);
+            margin-bottom: 25px;
+            padding-bottom: 5px;
+            break-inside: avoid;
+        }
+
+        .entry::before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            left: -7px;
+            top: 5px;
+        }
+
+        .job-title {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .date {
+            color: var(--neutral);
+            font-weight: 500;
+            font-size: 15px;
+            margin-left: 10px;
+            white-space: nowrap;
+        }
+
+        .company {
+            color: var(--secondary);
+            margin: 5px 0 10px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        ul {
+            margin-left: 10px;
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .skill-container {
+            margin-bottom: 25px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border-radius: 50px;
+            padding: 6px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 8px;
+            background-color: var(--light);
+            border-radius: 50px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            border-radius: 50px;
+            background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
+            transition: width 1s ease-in-out;
+        }
+
+        .language-entry {
+            margin-bottom: 15px;
+        }
+        
+        .language-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .language-level {
+            font-size: 14px;
+            color: var(--neutral);
+        }
+        
+        /* Enhanced Keywords for ATS optimization */
+        .keywords {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+            color: transparent;
+        }
+
+        .certificate-list li {
+            padding: 8px 25px;
+            background-color: var(--light);
+            border-radius: 5px;
+            margin-bottom: 10px;
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+
+        .certificate-list li:hover {
+            transform: translateX(5px);
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+                background: white;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                page-break-inside: avoid;
+            }
+            
+            .header {
+                padding: 20px 40px;
+            }
+            
+            .content {
+                padding: 20px 40px;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+            
+            .entry {
+                page-break-inside: avoid;
+            }
+            
+            h2 {
+                page-break-after: avoid;
+            }
+            
+            .skill-tag {
+                page-break-inside: avoid;
+            }
+            
+            /* Ensure backgrounds and colors print properly */
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 30px 20px;
+            }
+            
+            .photo-container {
+                margin: 0 auto 20px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+            
+            .contact-item {
+                justify-content: center;
+            }
+            
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .job-title {
+                flex-direction: column;
+            }
+            
+            .date {
+                margin-left: 0;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced keywords for ATS systems -->
+    <div class="keywords">
+        Fachinformatiker Anwendungsentwicklung C# .NET Visual Studio SQL Server MySQL HTML CSS JavaScript
+        Software Development Frontend Objektorientierte Programmierung Datenbanken Web Development 
+        C C# Visual Studio VSCode SQL Frontend Designer Technischer Support 42 School Berlin Programmieren
+        Webdesign Troubleshooting Software Hardware Datenmanagement Datenmigration Mercedes-Benz Group Services
+        WordPress Arabisch Englisch Deutsch Dolmetscher Übersetzung Responsive Design IHK Systemadministration
+        Linux Fundamentals Technical Support Google Coursera Linux Server Windows Server Agile Development
+        Software Engineering Projektmanagement Web Applications Desktop Applications Softwareentwicklung
+        Fachinformatiker IHK-Abschluss
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <div class="photo-container">
+                <img src="./ME.JPG" alt="Profilbild von Zain Alabdin Alfil" class="photo">
+            </div>
+            <div class="contact-info">
+                <h1>Zain Alabdin Alfil</h1>
+                <div class="position">Fachinformatiker Anwendungsentwicklung</div>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <i class="icon fas fa-map-marker-alt"></i>
+                        <span>Berliner Straße 41, 14979 Großbeeren</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="icon fas fa-phone"></i>
+                        <span>0176 7352 5106</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="icon fas fa-envelope"></i>
+                        <span>zain.alfil@gmx.net</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <section class="section">
+                <h2>Profil</h2>
+                <p>Als <strong>Fachinformatiker für Anwendungsentwicklung</strong> bringe ich fundierte Kenntnisse im <strong>Programmieren</strong> (C, C#), 
+                <strong>Webdesign</strong> (HTML, CSS) und <strong>Datenbankmanagement</strong> mit. Durch meine Erfahrung im <strong>Technischen Support</strong> verfüge ich über 
+                ausgezeichnete Problemlösungsfähigkeiten und ein tiefes Verständnis von Software- und Hardwaresystemen. 
+                Mit meinen vielseitigen IT-Kenntnissen, analytischem Denken und der Leidenschaft für effiziente technische Lösungen 
+                strebe ich nach kontinuierlicher Weiterentwicklung in der <strong>Softwareentwicklung</strong>.</p>
+            </section>
+
+            <section class="section">
+                <h2>Berufserfahrung</h2>
+                <div class="entry">
+                    <div class="job-title">
+                        <span>Praktikum als Datamanager</span>
+                        <span class="date">Okt. 2024 – März 2025</span>
+                    </div>
+                    <div class="company">Mercedes-Benz Group Services Berlin (MBGSB)</div>
+                    <ul>
+                        <li>Anwendungsentwicklung mit Fokus auf <strong>Datenmanagement-Lösungen</strong> unter Nutzung von C# und SQL</li>
+                        <li>Optimierung von Datenbankstrukturen und Implementierung von <strong>Datenmigrationsprozessen</strong> mit 20% verbesserter Performance</li>
+                        <li>Unterstützung bei der Entwicklung und Wartung von datengesteuerten Anwendungen in <strong>.NET-Umgebung</strong></li>
+                        <li>Analyse und Aufbereitung komplexer Datensätze für <strong>Business Intelligence</strong> mit MS SQL Server</li>
+                    </ul>
+                </div>
+                
+                <div class="entry">
+                    <div class="job-title">
+                        <span>Bäcker und Konditor</span>
+                        <span class="date">März 2018 – Juni 2019</span>
+                    </div>
+                    <div class="company">Café Krone Berlin Zehlendorf</div>
+                    <ul>
+                        <li>Herstellung von Backwaren unter Einhaltung von Qualitätsstandards und Rezepturen</li>
+                        <li>Verantwortlich für Warenannahme und Qualitätskontrolle</li>
+                        <li>Entwicklung von strukturierten Arbeitsprozessen für effiziente Produktionsabläufe mit 15% Zeitersparnis</li>
+                    </ul>
+                </div>
+                
+                <div class="entry">
+                    <div class="job-title">
+                        <span>Bundesfreiwilligendienst</span>
+                        <span class="date">2015 – 2017</span>
+                    </div>
+                    <div class="company">People meet People</div>
+                    <ul>
+                        <li><strong>Webdesign</strong> mit WordPress: Entwicklung und Wartung der Organisationswebsite mit <strong>responsive Design</strong></li>
+                        <li>Tätigkeit als Dolmetscher und Übersetzer für Arabisch-Deutsch-Englisch bei über 50 Veranstaltungen</li>
+                        <li>Projektleitung und Organisation von interkulturellen Begegnungen mit bis zu 100 Teilnehmern</li>
+                        <li>Koordination von Veranstaltungen und digitale Dokumentation mit MS Office-Tools</li>
+                    </ul>
+                </div>
+                
+                <div class="entry">
+                    <div class="job-title">
+                        <span>Online-Berater</span>
+                        <span class="date">Feb. 2015 – Juli 2015</span>
+                    </div>
+                    <div class="company">Alpha Istanbul – Soziale Beratung</div>
+                    <ul>
+                        <li>Online-Beratung zu Visumanträgen und Krankenversicherungen für über 200 Klienten</li>
+                        <li>Administrative Unterstützung bei digitalen Prozessen und Online-Reservierungen</li>
+                        <li>Klientenbetreuung und digitale Dokumentenverwaltung mit Datenbanksystemen</li>
+                    </ul>
+                </div>
+                
+                <div class="entry">
+                    <div class="job-title">
+                        <span>Abteilungsleiter</span>
+                        <span class="date">2012 – 2014</span>
+                    </div>
+                    <div class="company">New Horizon Tech Service, Syrien-Masyaf</div>
+                    <ul>
+                        <li>Smartphone-Software und App-Installation für mehr als 500 Kunden</li>
+                        <li>Computer (Desktop und Laptop) <strong>Software- und Hardware-Support</strong> mit erfolgreicher Problemlösung bei über 98% der Fälle</li>
+                        <li><strong>Systemkonfiguration</strong> und Netzwerkeinrichtung für kleine und mittlere Unternehmen</li>
+                        <li>Beratung und Schulung von Kunden zu technischen Lösungen, was zu 30% höherer Kundenzufriedenheit führte</li>
+                    </ul>
+                </div>
+                
+                <div class="entry">
+                    <div class="job-title">
+                        <span>Freiberufler als Frontend Designer & Technischer Support</span>
+                        <span class="date">2007 – 2011</span>
+                    </div>
+                    <div class="company">Selbstständig, Syrien-Masyaf</div>
+                    <ul>
+                        <li>Entwicklung von <strong>Frontend-Anwendungen</strong> mit Multimedia Builder für über 20 Kunden</li>
+                        <li>Erstellung von CD/DVD-Autoruns für PC-Software mit benutzerfreundlicher Oberfläche</li>
+                        <li>PC-Einrichtung und <strong>Systemfehlerbehebung</strong> (Troubleshooting) mit hoher Erfolgsquote</li>
+                        <li>Installation von Software und Firmware sowie Benutzeranwendungen für private und geschäftliche Kunden</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="two-column">
+                <section class="section">
+                    <h2>Ausbildung</h2>
+                    <div class="entry">
+                        <div class="job-title">
+                            <span>42 School Berlin</span>
+                            <span class="date">Jan. 2024 – Feb. 2024</span>
+                        </div>
+                        <div class="company">Software Engineering Piscine</div>
+                        <ul>
+                            <li>30 Tage intensives <strong>Peer-to-Peer-Programmieren</strong> mit Fokus auf C-Programmierung</li>
+                            <li>Fokus auf kollaborative <strong>Softwareentwicklung</strong> und algorithmisches Denken</li>
+                            <li>Projektbasiertes Lernen in einer <strong>agilen Umgebung</strong> mit Git-Versionskontrolle</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="entry">
+                        <div class="job-title">
+                            <span>Umschulung Fachinformatiker Anwendungsentwicklung (IHK)</span>
+                            <span class="date">2021 – 2023</span>
+                        </div>
+                        <div class="company">GPB Berlin - Gesellschaft für Personalentwicklung und Bildung mbH</div>
+                        <ul>
+                            <li><strong>Objektorientierte Programmierung</strong> mit C# und .NET Framework/Core</li>
+                            <li>Entwicklung von <strong>Datenbankanwendungen</strong> mit SQL (MS SQL Server, MySQL)</li>
+                            <li><strong>Webentwicklung</strong> mit HTML5, CSS3 und JavaScript für responsive Webanwendungen</li>
+                            <li><strong>Software Engineering</strong> und agile Entwicklungsmethoden (Scrum, Kanban)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="entry">
+                        <div class="job-title">
+                            <span>Online-Weiterbildung</span>
+                            <span class="date">2020 – 2024</span>
+                        </div>
+                        <div class="company">Coursera.org & FreeCodeCamp.org</div>
+                        <ul>
+                            <li><strong>Responsive Web Design</strong> (FreeCodeCamp) mit HTML5 und CSS3</li>
+                            <li><strong>Linux Fundamentals</strong> mit Schwerpunkt auf Kommandozeile und Systemadministration</li>
+                            <li>C# und Visual Studio Entwicklung für Windows- und Webanwendungen</li>
+                            <li>Java Programmierung, SQL und <strong>Datenbankdesign</strong> für skalierbare Anwendungen</li>
+                            <li><strong>Technical Support Fundamentals</strong> (Google) mit IT-Sicherheitsgrundlagen</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="entry">
+                        <div class="job-title">
+                            <span>Hotelfachschule</span>
+                            <span class="date">2006 – 2011</span>
+                        </div>
+                        <div class="company">Syrien-Masyaf</div>
+                        <ul>
+                            <li>Abschluss in Hotelfach mit Spezialisierung auf Kochen, Backen und Service</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>Technische Fähigkeiten</h2>
+                    <div class="skill-container">
+                        <h3>Programmierung</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">C#</span>
+                            <span class="skill-tag">.NET</span>
+                            <span class="skill-tag">OOP</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-container">
+                        <h3>Webentwicklung</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">WordPress</span>
+                            <span class="skill-tag">Responsive</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-container">
+                        <h3>Datenbanken</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">SQLite</span>
+                            <span class="skill-tag">MS SQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-container">
+                        <h3>Tools & Umgebungen</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Visual Studio</span>
+                            <span class="skill-tag">VSCode</span>
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">MS Office</span>
+                            <span class="skill-tag">Git</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-container">
+                        <h3>Support & Wartung</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Troubleshooting</span>
+                            <span class="skill-tag">SW/HW Support</span>
+                            <span class="skill-tag">Systemadministration</span>
+                        </div>
+                    </div>
+                    
+                    <h2>Sprachen</h2>
+                    <div class="language-entry">
+                        <div class="language-header">
+                            <strong>Arabisch</strong>
+                            <span class="language-level">Muttersprache (C2)</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="language-entry">
+                        <div class="language-header">
+                            <strong>Englisch</strong>
+                            <span class="language-level">Fließend (C1)</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="language-entry">
+                        <div class="language-header">
+                            <strong>Deutsch</strong>
+                            <span class="language-level">Fortgeschritten (B2)</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="language-entry">
+                        <div class="language-header">
+                            <strong>Judeo-Arabisch</strong>
+                            <span class="language-level">Grundkenntnisse (A2)</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 40%"></div>
+                        </div>
+                    </div>
+                    
+                    <h2>Zertifikate</h2>
+                    <ul class="certificate-list">
+                        <li>Linux Fundamentals (Coursera, 2022)</li>
+                        <li>C# in Visual Studio (Coursera, 2021)</li>
+                        <li>C# Fundamentals (Coursera, 2021)</li>
+                        <li>Java Programming Fundamentals (Coursera, 2022)</li>
+                        <li>SQL & Relationale Datenbanken (Coursera, 2023)</li>
+                        <li>Technical Support Fundamentals Google (Coursera, 2022)</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
